@@ -1,6 +1,4 @@
-import Container from "./Container"; // আপনার প্রজেক্টের কন্টেইনার কম্পোনেন্ট
-
-// লোকাল অ্যাসেট ফোল্ডার থেকে ইমেজগুলো ইমপোর্ট করা হচ্ছে
+import Container from "./Container";
 import riceImg from "../assets/Crop_Categories/Whole_Grains.jpg";
 import fruitImg from "../assets/Crop_Categories/fruits.jpg";
 import bannnaImg from "../assets/Crop_Categories/Banana.jpg";
@@ -8,7 +6,6 @@ import cottonImg from "../assets/Crop_Categories/Cotton.jpg";
 import tolarImg from "../assets/Crop_Categories/tola.jpg";
 import vagitableImg from "../assets/Crop_Categories/vegetables.jpg";
 import epubImg from "../assets/Crop_Categories/epub.jpg";
-
 import { useState } from "react";
 
 export default function CropCategoriesTab() {
@@ -42,7 +39,7 @@ export default function CropCategoriesTab() {
       {
         id: 1,
         name: "Mango",
-        image: fruitImg, // আপনার লোকাল ইমেজ ইমপোর্ট করে এখানে ভ্যারিয়েবল বসাবেন
+        image: fruitImg,
         calories: "60 per 100g",
         carbs: "15g",
         protein: "0.8g",
@@ -52,7 +49,7 @@ export default function CropCategoriesTab() {
       {
         id: 2,
         name: "Banana",
-        image: bannnaImg, // এখানে লোকাল ভ্যারিয়েবলটি বসানো হয়েছে
+        image: bannnaImg,
 
         calories: "89 per 100g",
         carbs: "23g",
@@ -111,20 +108,18 @@ export default function CropCategoriesTab() {
     <section className="bg-gray-50 py-12">
       <Container>
         <div className="bg-white rounded-xl shadow-md border border-gray-100 p-6 md:p-10 max-w-6xl mx-auto">
-          {/* সেকশন হেডার */}
           <div className="bg-[#e0f2fe] py-4 rounded-t-lg border-b border-gray-100 mb-6 text-center">
             <h2 className="text-xl md:text-3xl font-bold text-gray-800 tracking-wide">
               Farming Guide: Crop Categories
             </h2>
           </div>
 
-          {/* ট্যাব নেভিগেশন */}
           <div className="flex flex-wrap border-b border-gray-200 mb-6 gap-2">
             {tabs.map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-4 py-2 text-xs md:text-sm font-semibold tracking-wide transition-all duration-200 rounded-t-md -mb-[1px] ${
+                className={`px-4 py-2 text-xs md:text-sm font-semibold tracking-wide transition-all duration-200 rounded-t-md -mb-px ${
                   activeTab === tab
                     ? "border-t border-x border-gray-300 bg-white text-blue-600 shadow-sm"
                     : "text-blue-500 hover:text-blue-700 bg-transparent border-transparent"
@@ -135,24 +130,21 @@ export default function CropCategoriesTab() {
             ))}
           </div>
 
-          {/* ডাইনামিক গ্রিড কন্টেন্ট */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {cropData[activeTab].map((crop) => (
               <div
                 key={crop.id}
                 className="border border-gray-200 rounded-lg p-4 flex flex-col justify-between bg-white shadow-sm hover:shadow-md transition-shadow duration-300"
               >
-                {/* শস্যের ছবি এরিয়া */}
-                <div className="h-[220px] w-full overflow-hidden rounded-md border border-gray-100 mb-4">
+                <div className="h-55 w-full overflow-hidden rounded-md border border-gray-100 mb-4">
                   <img
-                    src={crop.image} // এখানে লোকাল ভ্যারিয়েবল পাথটি রেন্ডার হবে
+                    src={crop.image}
                     alt={crop.name}
                     loading="lazy"
                     className="w-full h-full object-cover transform hover:scale-103 transition-transform duration-500"
                   />
                 </div>
 
-                {/* শস্যের ডিটেইলস */}
                 <div className="flex-1 flex flex-col justify-between text-left">
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -204,7 +196,6 @@ export default function CropCategoriesTab() {
                     </p>
                   </div>
 
-                  {/* ডিটেইলস বাটন */}
                   <button className="w-fit bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold px-5 py-2 rounded shadow-sm transition-colors duration-200 active:scale-95">
                     Details {/* */}
                   </button>
