@@ -3,14 +3,12 @@ import Container from "./Container"; // আপনার প্রজেক্ট
 import { useState } from "react";
 
 export default function CropInformation() {
-  // শুরুতে কোনো একর্ডিয়ন ওপেন থাকবে না, তাই স্টেট null রাখা হয়েছে
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
-  // ছবির টাইটেল অনুযায়ী বাস্তবসম্মত এগ্রিকালচার ডেটা
   const cropInfoData = [
     {
       id: 1,
