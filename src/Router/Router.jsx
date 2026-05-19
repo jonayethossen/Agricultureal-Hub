@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import FarmingGuide from "../pages/FarmingGuide";
 import CropDetails from "../pages/CropDetails";
 import PestControlStrategies from "../pages/PestControlStrategies";
+import Contact from "../pages/Contact";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/pest-control",
         element: <PestControlStrategies />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
     ],
   },
