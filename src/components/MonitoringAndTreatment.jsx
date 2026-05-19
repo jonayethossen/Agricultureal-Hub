@@ -1,26 +1,23 @@
-import Container from "./Container"; // আপনার প্রজেক্টের কন্টেইনার কম্পোনেন্ট
-
-// লোকাল অ্যাসেট ফোল্ডার থেকে ইমেজগুলো ইমপোর্ট করা হচ্ছে (আপনার পাথ অনুযায়ী অ্যাডজাস্ট করে নেবেন)
+import Container from "./Container";
 import monitoringImg from "../assets/MonitoringAndTreatment/FarmERP.png";
 import detectionImg from "../assets/MonitoringAndTreatment/Farming.jpg";
 import treatmentImg from "../assets/MonitoringAndTreatment/PrecisionAgriculture.jpeg";
 
 export default function MonitoringAndTreatment() {
-  // ছবির ডাটা স্ট্রাকচার এবং টেক্সট কন্টেন্ট অনুযায়ী অ্যারে
   const cardData = [
     {
       id: 1,
       title: "Monitoring",
       image: monitoringImg,
       paragraphs: [
-        "Regular feild inspection and pest scouting.", // ছবির হুবহু টাইপো সহ টেক্সট
+        "Regular feild inspection and pest scouting.",
         "Regular feild inspection and pest scouting.",
         "Regular feild inspection and pest scouting.",
       ],
     },
     {
       id: 2,
-      title: "Early Detection", // ছবির টাইটেল স্পেলিং অনুযায়ী 'Detacktion' বা স্ট্যান্ডার্ড রাখতে পারেন
+      title: "Early Detection",
       image: detectionImg,
       paragraphs: [
         "Use Traps Lorem ipsum dolor sit amet, consectetur adipisicing.",
@@ -41,23 +38,19 @@ export default function MonitoringAndTreatment() {
   return (
     <section className="bg-gray-50 py-12">
       <Container>
-        {/* মেইন সাদা ব্যাকগ্রাউন্ডের কার্ড কন্টেইনার */}
         <div className="bg-white rounded-xl shadow-md border border-gray-100 p-6 md:p-10 max-w-6xl mx-auto">
-          {/* সেকশন মেইন হেডার (ছবির হালকা লাইট গ্রিন শেড) */}
           <div className="bg-[#d1e7dd] py-4 rounded-t-lg border-b border-gray-200/60 mb-8 text-center">
             <h2 className="text-xl md:text-3xl font-bold text-gray-800 tracking-wide">
               Monitornig, Early Detecation & Treatment
             </h2>
           </div>
 
-          {/* থ্রি-কলাম গ্রিড লেআউট */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {cardData.map((card) => (
               <div
                 key={card.id}
                 className="border border-gray-200 rounded-lg overflow-hidden flex flex-col bg-white shadow-sm hover:shadow-md transition-shadow duration-300"
               >
-                {/* কার্ডের ভেতরের ইমেজ এরিয়া */}
                 <div className="h-50 w-full overflow-hidden p-1 bg-white">
                   <img
                     src={card.image}
@@ -67,15 +60,12 @@ export default function MonitoringAndTreatment() {
                   />
                 </div>
 
-                {/* কার্ড কন্টেন্ট এরিয়া */}
                 <div className="p-5 flex-1 flex flex-col justify-between text-left">
                   <div>
-                    {/* কার্ড সাব-টাইটেল */}
                     <h3 className="text-lg font-bold text-gray-800 mb-4 tracking-wide">
                       {card.title}
                     </h3>
 
-                    {/* প্যারাগ্রাফ লিস্ট (ছবির ডিজাইন অনুযায়ী স্পেসিং সহ) */}
                     <div className="space-y-4 text-xs md:text-sm text-gray-600 font-medium leading-relaxed">
                       {card.paragraphs.map((para, index) => (
                         <p key={index} className="text-justify">
