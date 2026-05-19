@@ -3,6 +3,7 @@ import Layouts from "../Layouts";
 import Home from "../pages/Home";
 import FarmingGuide from "../pages/FarmingGuide";
 import CropDetails from "../pages/CropDetails";
+import PestControlStrategies from "../pages/PestControlStrategies";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/crop-details",
         element: <CropDetails />,
+      },
+      {
+        path: "/pest-control",
+        element: <PestControlStrategies />,
       },
     ],
   },
